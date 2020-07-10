@@ -5,14 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "CodeLens (Launch) - GetMin",
-            "request": "launch",
-            "mainClass": "getMin_java.GetMin",
-            "projectName": "javac53_f11d220b"
-        },
-        {
-            "name": "(gdb) 启动",
+            "name": "c/c++(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",

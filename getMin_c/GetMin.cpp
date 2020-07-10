@@ -3,7 +3,6 @@
 #include <vector>
 #include <string>
 using namespace std;
-
 //方法1
 typedef struct sqstack1
 {
@@ -26,7 +25,7 @@ typedef struct sqstack1
     {
         // 如果栈为空，则不能出栈。（报错提示）
         if (stackData.empty())
-            cout << "栈为空，不能出栈";
+            throw "栈为空，不能出栈";
         // 栈不为空时，先出栈,同时把出栈元素赋值给value
         int value = stackData.top();
         // 出栈元素与Min栈栈顶元素比较，
@@ -46,7 +45,7 @@ typedef struct sqstack1
     {
         // 如果stack栈中没有元素（stack还未初始化），报错
         if (stackMin.empty())
-            cout << "栈为空";
+            throw "栈为空，不能出栈";
         // 正常情况下，返回Min栈栈顶元素
         return stackMin.top();
     }
@@ -77,7 +76,7 @@ typedef struct sqstack2
     {
         // 如果栈为空，则不能出栈。（报错提示）
         if (stackData.empty())
-            cout << "栈为空，不能出栈";
+            throw "栈为空，不能出栈";
         // 正常出栈时，双栈都出栈。
         // 相比于方法1少了判断
         // 代价是相比于方法1占用空间相对多了。
@@ -94,7 +93,7 @@ typedef struct sqstack2
     {
         // 如果stack栈中没有元素（stack还未初始化），报错
         if (stackMin.empty())
-            cout << "栈为空";
+            throw "栈为空，不能出栈";
         // 正常情况下，返回Min栈栈顶元素
         return stackMin.top();
     }
@@ -103,42 +102,49 @@ typedef struct sqstack2
 //测试
 int main()
 {
+    try
+    {
 
-    MyStack1 s1;
-    // 入栈3
-    s1.push(3);
-    // 获取最小值
-    cout << "最小值是：" << s1.getMin() << endl;
-    // 入栈4
-    s1.push(4);
-    // 获取最小值
-    cout << "最小值是：" << s1.getMin() << endl;
-    // 入栈1
-    s1.push(1);
-    // 获取最小值
-    cout << "最小值是：" << s1.getMin() << endl;
-    // 出栈
-    s1.pop();
-    // 获取最小值
-    cout << "最小值是：" << s1.getMin() << endl;
+        MyStack1 s1;
+        // 入栈3
+        s1.push(3);
+        // 获取最小值
+        cout << "最小值是：" << s1.getMin() << endl;
+        // 入栈4
+        s1.push(4);
+        // 获取最小值
+        cout << "最小值是：" << s1.getMin() << endl;
+        // 入栈1
+        s1.push(1);
+        // 获取最小值
+        cout << "最小值是：" << s1.getMin() << endl;
+        // 出栈
+        s1.pop();
+        // 获取最小值
+        cout << "最小值是：" << s1.getMin() << endl;
 
-    cout << "==========" << endl;
+        cout << "==========" << endl;
 
-    MyStack2 s2;
-    // 入栈3
-    s2.push(3);
-    // 获取最小值
-    cout << "最小值是：" << s2.getMin() << endl;
-    // 入栈4
-    s2.push(4);
-    // 获取最小值
-    cout << "最小值是：" << s2.getMin() << endl;
-    // 入栈1
-    s2.push(1);
-    // 获取最小值
-    cout << "最小值是：" << s2.getMin() << endl;
-    // 出栈
-    s2.pop();
-    // 获取最小值
-    cout << "最小值是：" << s2.getMin() << endl;
+        MyStack2 s2;
+        // 入栈3
+        s2.push(3);
+        // 获取最小值
+        cout << "最小值是：" << s2.getMin() << endl;
+        // 入栈4
+        s2.push(4);
+        // 获取最小值
+        cout << "最小值是：" << s2.getMin() << endl;
+        // 入栈1
+        s2.push(1);
+        // 获取最小值
+        cout << "最小值是：" << s2.getMin() << endl;
+        // 出栈
+        s2.pop();
+        // 获取最小值
+        cout << "最小值是：" << s2.getMin() << endl;
+    }
+    catch (const char* msg)
+    {
+        cerr << msg << endl;
+    }
 }

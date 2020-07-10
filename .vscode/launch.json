@@ -5,7 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "c++",
+            "type": "java",
+            "name": "CodeLens (Launch) - GetMin",
+            "request": "launch",
+            "mainClass": "getMin_java.GetMin",
+            "projectName": "javac53_f11d220b"
+        },
+        {
+            "name": "(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
@@ -19,7 +26,7 @@
             "preLaunchTask": "g++",
             "setupCommands": [
                 {
-                    "description": "为 gdb 启用整齐打印",
+                    "description": "gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
@@ -27,16 +34,9 @@
         },
         {
             "type": "java",
-            "name": "Debug (Launch) - Current File",
+            "name": "javaDebug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch)-hello<javac53_d5f0af52>",
-            "request": "launch",
-            "mainClass": "hello",
-            "projectName": "javac53_d5f0af52"
         }
     ]
 }

@@ -10,7 +10,6 @@ static int getAndRemoveLastElement(stack<int>& rstack)
     rstack.pop();
     if (rstack.empty())
         return result;
-    //有问题
     int last = getAndRemoveLastElement(rstack);
     rstack.push(result);
     return last;

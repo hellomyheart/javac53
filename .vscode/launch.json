@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - DogCatQueues",
+            "request": "launch",
+            "mainClass": "DogCatQueue_java.DogCatQueues",
+            "projectName": "javac53_f11d220b"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DogCatQueue",
+            "request": "launch",
+            "mainClass": "DogCatQueue_java.DogCatQueue",
+            "projectName": "javac53_f11d220b"
+        },
+        {
             "name": "c/c++(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",
